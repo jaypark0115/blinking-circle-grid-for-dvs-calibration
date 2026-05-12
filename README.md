@@ -23,6 +23,10 @@ Asymmetric circle grid는 원형 점들이 떨어져 있기 때문에, 각 원�
 
 Checkerboard를 이벤트 카메라에 사용하면 흰색과 검은색의 경계가 만드는 ON/OFF event의 교차점을 정확히 잡아야 합니다. 하지만 교차점은 여러 edge가 만나는 지점이라 이벤트가 복잡하게 섞이고, 카메라 움직임이나 모니터 refresh 상태에 따라 안정적으로 포착하기 어렵습니다.
 
+<p align="center">
+  <img src="assets/8.jpg" width="45%" alt="checkerboard event example">
+</p>
+
 반면 circle grid는 서로 떨어져 있는 원 하나하나를 독립적인 점으로 볼 수 있습니다. 밝은 원과 어두운 원을 blink시키면 각 원 주변에서 이벤트가 발생하고, 이 이벤트 묶음만 잘 포착하면 점 위치를 비교적 정확하게 얻을 수 있습니다.
 
 또한 별도의 인쇄물이나 조명 장치를 준비하지 않고 모니터만 사용하면 되므로 준비 과정이 간단합니다. 이런 이유로 NRV DVS 캘리브레이션 준비 단계에서는 asymmetric circle grid를 사용하는 것이 좋습니다.
