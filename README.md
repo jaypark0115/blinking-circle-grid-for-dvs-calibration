@@ -1,6 +1,6 @@
 # [1]. Blinking Asymmetric Circle Grid for NRV DVS Calibration
 
-NRV DVS 캘리브레이션을 위해 모니터에 blinking asymmetric circle grid를 띄우는 준비 코드입니다. 이후 캘리브레이션, 스테레오 매칭, pose 선택 과정까지 시리즈로 정리할 예정이며, 이 저장소는 그중 첫 번째 단계입니다.
+NRV DVS 캘리브레이션을 위해 모니터에 blinking asymmetric circle grid를 띄우는 준비 코드입니다. 이후 캘리브레이션, 스테레오 매칭 까지 시리즈로 정리할 예정이며, 이 저장소는 그중 첫 번째 단계입니다.
 
 메인 파일은 `circle_blink.py` 하나입니다. OpenCV로 전체화면 창을 만들고, asymmetric circle grid의 원들을 흰색과 검은색으로 번갈아 표시하여 DVS가 원 위치에서 이벤트를 만들 수 있게 합니다.
 
