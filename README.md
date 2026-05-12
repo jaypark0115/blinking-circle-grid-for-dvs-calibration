@@ -4,7 +4,9 @@ NRV DVS 캘리브레이션을 위해 모니터에 blinking asymmetric circle gri
 
 메인 파일은 `circle_blink.py` 하나입니다. OpenCV로 전체화면 창을 만들고, asymmetric circle grid의 원들을 흰색과 검은색으로 번갈아 표시하여 DVS가 원 위치에서 이벤트를 만들 수 있게 합니다.
 
-![blinking asymmetric circle grid setup](assets/1.png)
+<p align="center">
+  <img src="assets/1.png" width="70%" alt="blinking asymmetric circle grid setup">
+</p>
 
 아래처럼 모니터에 흰색 원과 검은색 원이 번갈아 나타나게 하고, NRV DVS가 모니터를 바라보도록 배치하여 circle grid 이벤트를 기록합니다.
 
@@ -31,7 +33,9 @@ Checkerboard를 이벤트 카메라에 사용하면 흰색과 검은색의 경�
 
 2. 아래 사진처럼 NRV DVS를 삼각대에 놓고 고정한 뒤, DVS가 모니터를 바라보게 한 상태에서 기록합니다.
 
-![dvs tripod setup](assets/6.png)
+<p align="center">
+  <img src="assets/6.png" width="70%" alt="dvs tripod setup">
+</p>
 
 3. 촬영 중 카메라나 모니터가 흔들려 주변 물체까지 함께 보이면 문제가 생깁니다. 아래 왼쪽 사진처럼 주변 물체가 많이 검출되는 상황은 피하고, 오른쪽 사진처럼 모니터와 카메라가 정지된 상태에서 circle grid의 원들만 검출되는 상황을 유지하는 것이 이상적입니다.
 
@@ -130,6 +134,8 @@ assets/
 
 ## 주의할 점
 
-이 코드는 NRV DVS 캘리브레이션 데이터를 얻기 위한 준비 단계입니다. 모니터 refresh, 운영체제의 창 표시 타이밍, OpenCV `waitKey`, Python sleep은 하드웨어 trigger처럼 정밀하지 않습니다. 따라서 기록된 데이터에서 전체 circle grid가 잘 보이는 순간을 직접 선택하는 과정이 필요합니다.
+이 코드는 NRV DVS 캘리브레이션 데이터를 얻기 위한 준비 단계입니다. NRV 센서는 global shutter를 지원하기 때문에, 모니터에 표시된 circle grid 전체가 같은 pose로 잡히는 상황을 만들 수 있고 이 방식에 적합합니다.
+
+다만 모니터 refresh, 운영체제의 창 표시 타이밍, OpenCV `waitKey`, Python sleep은 하드웨어 trigger처럼 정밀하지 않습니다. 따라서 기록된 데이터에서 전체 circle grid가 잘 보이는 순간을 직접 선택하는 과정이 필요합니다.
 
 카메라와 모니터는 촬영 중 최대한 고정해야 합니다. 주변 물체가 함께 이벤트로 검출되거나, 카메라가 흔들려 grid 외곽이 번지면 이후 center 검출과 calibration 정확도가 떨어질 수 있습니다.
