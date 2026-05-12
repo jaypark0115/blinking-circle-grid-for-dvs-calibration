@@ -34,7 +34,7 @@ Checkerboard를 이벤트 카메라에 사용하면 흰색과 검은색의 경�
 2. 아래 사진처럼 NRV DVS를 삼각대에 놓고 고정한 뒤, DVS가 모니터를 바라보게 한 상태에서 기록합니다.
 
 <p align="center">
-  <img src="assets/6.png" width="70%" alt="dvs tripod setup">
+  <img src="assets/6.png" width="35%" alt="dvs tripod setup">
 </p>
 
 3. 촬영 중 카메라나 모니터가 흔들려 주변 물체까지 함께 보이면 문제가 생깁니다. 아래 왼쪽 사진처럼 주변 물체가 많이 검출되는 상황은 피하고, 오른쪽 사진처럼 모니터와 카메라가 정지된 상태에서 circle grid의 원들만 검출되는 상황을 유지하는 것이 이상적입니다.
