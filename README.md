@@ -1,4 +1,4 @@
-# [1]. Blinking Asymmetric Circle Grid for NRV DVS Calibration
+# [1] Blinking Asymmetric Circle Grid for NRV DVS Calibration
 
 NRV DVS 캘리브레이션을 위해 모니터에 blinking asymmetric circle grid를 띄우는 준비 코드입니다. 이후 캘리브레이션, 스테레오 매칭 까지 시리즈로 정리할 예정이며, 이 저장소는 그중 첫 번째 단계입니다.
 
@@ -135,6 +135,8 @@ assets/
 ## 주의할 점
 
 이 코드는 NRV DVS 캘리브레이션 데이터를 얻기 위한 준비 단계입니다. NRV 센서는 global shutter를 지원하기 때문에, 모니터에 표시된 circle grid 전체가 같은 pose로 잡히는 상황을 만들 수 있고 이 방식에 적합합니다.
+
+모니터는 곡면이 아닌 평면 모니터를 사용해야 합니다. 캘리브레이션 패턴은 하나의 평면 위에 있다고 가정하므로, curved monitor를 사용하면 circle grid의 실제 위치가 휘어져 캘리브레이션 오차가 커질 수 있습니다.
 
 다만 모니터 refresh, 운영체제의 창 표시 타이밍, OpenCV `waitKey`, Python sleep은 하드웨어 trigger처럼 정밀하지 않습니다. 따라서 기록된 데이터에서 전체 circle grid가 잘 보이는 순간을 직접 선택하는 과정이 필요합니다.
 
