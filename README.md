@@ -40,12 +40,13 @@ The script detects active Windows displays, moves an OpenCV window to the select
 ```text
 circle_blink.py    Main fullscreen blinking-pattern program
 README.md          This guide
-legacy/            Previous README, script, and image assets
 ```
 
 ## Notes
 
 - This program uses Windows display APIs and is intended for Windows.
 - Match `TARGET_MONITOR` and `MONITOR_RESOLUTIONS` to the display numbers and resolutions shown in Windows display settings.
-- The visible timing is limited by the monitor refresh rate, the operating system, and OpenCV window scheduling; it is not a hardware trigger.
-- Keep the camera and monitor still during capture, and use a flat monitor for calibration.
+- This script is a preparation step for acquiring NRV DVS calibration data. The NRV sensor supports a global shutter, which makes it suitable for capturing the complete monitor pattern at a single pose.
+- Use a flat monitor rather than a curved monitor. Calibration assumes that the pattern lies on one plane; a curved display bends the apparent circle-grid positions and can increase calibration error.
+- Monitor refresh, operating-system window timing, OpenCV `waitKey`, and Python `sleep` are not as precise as a hardware trigger. Review the recorded data and select moments where the complete circle grid is clearly visible.
+- Keep both the camera and monitor as still as possible during capture. Events from surrounding objects or motion blur at the grid boundary can reduce center-detection and calibration accuracy.
