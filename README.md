@@ -27,6 +27,10 @@ Edit the constants at the top of `circle_blink.py`.
 
 The spacing, circle diameter, and margins are scaled from the reference resolution. With only one active monitor, the script uses that monitor's detected resolution automatically.
 
+### Default Behavior
+
+With the included defaults, the program displays a centered 4×11 asymmetric circle grid in fullscreen on monitor 2 at 3840×2160. The grid alternates between white and black at 10 complete blink cycles per second (10 Hz) on a mid-gray background. The rendering loop targets 120 FPS; the actual visible update rate is limited by the display refresh rate and the operating system.
+
 ## How It Works
 
 The script detects active Windows displays, moves an OpenCV window to the selected display, and switches it to fullscreen. It generates a centered asymmetric circle grid on a mid-gray background. All circles alternate between white and black according to `BLINK_HZ`, producing brightness transitions for a DVS camera.
